@@ -1,8 +1,8 @@
 # Marketplace
 
-A SaaS **app store** for business modules. Companies sign up, open a workspace, browse the catalogue, install apps, and pay. Platform operators publish apps, set plans, and collect payment.
+> **This is not an ERP.** It is a SaaS app store platform. Accounting, sales, HR, inventory, and customer invoicing are not part of this product today; they are meant to ship later as installable apps.
 
-This is **not an ERP**. Accounting, sales, HR, inventory, and customer invoicing are not in this repository. Those are meant to ship later as installable apps.
+A SaaS **app store** for business modules. Companies sign up, open a workspace, browse the catalogue, install apps, and pay. Platform operators publish apps, set plans, and collect payment.
 
 The Base44 project name is still `ERP تكويد (V1)`. Treat that as a leftover label.
 
