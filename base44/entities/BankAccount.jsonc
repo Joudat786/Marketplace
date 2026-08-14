@@ -1,0 +1,56 @@
+{
+  "name": "BankAccount",
+  "type": "object",
+  "properties": {
+    "bank_name": {
+      "type": "string",
+      "description": "\u0627\u0633\u0645 \u0627\u0644\u0628\u0646\u0643"
+    },
+    "account_holder_name": {
+      "type": "string",
+      "description": "\u0627\u0633\u0645 \u0635\u0627\u062d\u0628 \u0627\u0644\u062d\u0633\u0627\u0628"
+    },
+    "account_number": {
+      "type": "string",
+      "description": "\u0631\u0642\u0645 \u0627\u0644\u062d\u0633\u0627\u0628"
+    },
+    "iban": {
+      "type": "string",
+      "description": "\u0631\u0642\u0645 \u0627\u0644\u0622\u064a\u0628\u0627\u0646 IBAN"
+    },
+    "swift_code": {
+      "type": "string",
+      "description": "\u0631\u0645\u0632 SWIFT/BIC"
+    },
+    "currency": {
+      "type": "string",
+      "default": "SAR",
+      "description": "\u0627\u0644\u0639\u0645\u0644\u0629"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "\u0647\u0644 \u0627\u0644\u062d\u0633\u0627\u0628 \u0645\u0641\u0639\u0651\u0644"
+    },
+    "iban_certificate_url": {
+      "type": "string",
+      "description": "\u0631\u0627\u0628\u0637 \u0634\u0647\u0627\u062f\u0629 \u0627\u0644\u0622\u064a\u0628\u0627\u0646 (\u0645\u0631\u0641\u0642)"
+    },
+    "sort_order": {
+      "type": "integer",
+      "default": 0,
+      "description": "\u062a\u0631\u062a\u064a\u0628 \u0627\u0644\u0639\u0631\u0636"
+    },
+    "workspace_id": {
+      "type": "string",
+      "description": "\u0645\u0633\u0627\u062d\u0629 \u0627\u0644\u0639\u0645\u0644 \u2014 null = \u0625\u062f\u0627\u0631\u0629 \u0627\u0644\u0645\u0646\u0635\u0629 \u0627\u0644\u0639\u0644\u064a\u0627 \u0641\u0642\u0637"
+    }
+  },
+  "required": [
+    "bank_name",
+    "account_holder_name",
+    "account_number",
+    "iban",
+    "currency"
+  ]
+}

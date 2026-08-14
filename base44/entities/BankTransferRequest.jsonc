@@ -1,0 +1,113 @@
+{
+  "name": "BankTransferRequest",
+  "type": "object",
+  "properties": {
+    "workspace_id": {
+      "type": "string",
+      "description": "\u0645\u0639\u0631\u0651\u0641 \u0645\u0633\u0627\u062d\u0629 \u0627\u0644\u0639\u0645\u0644"
+    },
+    "installed_app_id": {
+      "type": "string",
+      "description": "\u0645\u0639\u0631\u0651\u0641 InstalledApp \u0627\u0644\u0645\u0631\u062a\u0628\u0637"
+    },
+    "payment_transaction_id": {
+      "type": "string",
+      "description": "\u0645\u0639\u0631\u0651\u0641 PaymentTransaction"
+    },
+    "customer_name": {
+      "type": "string",
+      "description": "\u0627\u0633\u0645 \u0627\u0644\u0639\u0645\u064a\u0644"
+    },
+    "customer_email": {
+      "type": "string",
+      "description": "\u0628\u0631\u064a\u062f \u0627\u0644\u0639\u0645\u064a\u0644"
+    },
+    "app_name": {
+      "type": "string",
+      "description": "\u0627\u0633\u0645 \u0627\u0644\u062a\u0637\u0628\u064a\u0642 \u0623\u0648 \u0627\u0644\u0628\u0627\u0642\u0629"
+    },
+    "amount": {
+      "type": "number",
+      "description": "\u0627\u0644\u0645\u0628\u0644\u063a"
+    },
+    "currency": {
+      "type": "string",
+      "default": "SAR"
+    },
+    "billing_cycle": {
+      "type": "string",
+      "enum": [
+        "monthly",
+        "yearly"
+      ],
+      "default": "monthly"
+    },
+    "transfer_mode": {
+      "type": "string",
+      "enum": [
+        "immediate",
+        "deadline"
+      ],
+      "default": "immediate"
+    },
+    "sender_name": {
+      "type": "string",
+      "description": "\u0627\u0633\u0645 \u0627\u0644\u0645\u064f\u062d\u0648\u0650\u0651\u0644"
+    },
+    "receipt_url": {
+      "type": "string",
+      "description": "\u0631\u0627\u0628\u0637 \u0625\u064a\u0635\u0627\u0644 \u0627\u0644\u062a\u062d\u0648\u064a\u0644"
+    },
+    "bank_account_id": {
+      "type": "string",
+      "description": "\u0645\u0639\u0631\u0651\u0641 \u0627\u0644\u062d\u0633\u0627\u0628 \u0627\u0644\u0628\u0646\u0643\u064a"
+    },
+    "bank_name": {
+      "type": "string",
+      "description": "\u0627\u0633\u0645 \u0627\u0644\u0628\u0646\u0643"
+    },
+    "bank_account_holder": {
+      "type": "string",
+      "description": "\u0627\u0633\u0645 \u0635\u0627\u062d\u0628 \u0627\u0644\u062d\u0633\u0627\u0628"
+    },
+    "bank_iban": {
+      "type": "string",
+      "description": "\u0631\u0642\u0645 \u0627\u0644\u0622\u064a\u0628\u0627\u0646"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected",
+        "expired"
+      ],
+      "default": "pending",
+      "description": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0637\u0644\u0628"
+    },
+    "deadline_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "\u0645\u0648\u0639\u062f \u0627\u0646\u062a\u0647\u0627\u0621 \u0627\u0644\u0645\u0647\u0644\u0629"
+    },
+    "reviewed_by": {
+      "type": "string",
+      "description": "\u0627\u0644\u0645\u0631\u0627\u062c\u0639"
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "rejection_reason": {
+      "type": "string",
+      "description": "\u0633\u0628\u0628 \u0627\u0644\u0631\u0641\u0636"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "customer_email",
+    "amount"
+  ]
+}

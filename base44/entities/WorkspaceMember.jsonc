@@ -1,0 +1,129 @@
+{
+  "name": "WorkspaceMember",
+  "type": "object",
+  "properties": {
+    "workspace_id": {
+      "type": "string",
+      "description": "\u0645\u0639\u0631\u0641 \u0645\u0633\u0627\u062d\u0629 \u0627\u0644\u0639\u0645\u0644"
+    },
+    "workspace_name": {
+      "type": "string",
+      "description": "\u0627\u0633\u0645 \u0645\u0633\u0627\u062d\u0629 \u0627\u0644\u0639\u0645\u0644 (\u0644\u0644\u0639\u0631\u0636)"
+    },
+    "workspace_logo": {
+      "type": "string",
+      "description": "\u0634\u0639\u0627\u0631 \u0645\u0633\u0627\u062d\u0629 \u0627\u0644\u0639\u0645\u0644"
+    },
+    "owner_name": {
+      "type": "string",
+      "description": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0627\u0644\u0643"
+    },
+    "owner_email": {
+      "type": "string",
+      "description": "\u0628\u0631\u064a\u062f \u0627\u0644\u0645\u0627\u0644\u0643"
+    },
+    "member_email": {
+      "type": "string",
+      "description": "\u0628\u0631\u064a\u062f \u0627\u0644\u0639\u0636\u0648"
+    },
+    "member_name": {
+      "type": "string",
+      "description": "\u0627\u0633\u0645 \u0627\u0644\u0639\u0636\u0648"
+    },
+    "activity_type": {
+      "type": "string",
+      "description": "\u0646\u0648\u0639 \u0627\u0644\u0646\u0634\u0627\u0637 (\u062a\u062c\u0627\u0631\u064a\u060c \u0637\u0628\u064a\u060c \u062a\u0639\u0644\u064a\u0645\u064a...)"
+    },
+    "join_method": {
+      "type": "string",
+      "enum": [
+        "owner",
+        "invited",
+        "request"
+      ],
+      "default": "owner",
+      "description": "\u0637\u0631\u064a\u0642\u0629 \u0627\u0644\u0627\u0646\u0636\u0645\u0627\u0645: \u0645\u0627\u0644\u0643 / \u0645\u062f\u0639\u0648 / \u0637\u0644\u0628"
+    },
+    "join_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0627\u0646\u0636\u0645\u0627\u0645"
+    },
+    "is_default": {
+      "type": "boolean",
+      "default": false,
+      "description": "\u0647\u0644 \u0647\u064a \u0645\u0633\u0627\u062d\u0629 \u0627\u0644\u0639\u0645\u0644 \u0627\u0644\u0627\u0641\u062a\u0631\u0627\u0636\u064a\u0629"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "owner",
+        "admin",
+        "member"
+      ],
+      "default": "member",
+      "description": "\u062f\u0648\u0631 \u0627\u0644\u0639\u0636\u0648 \u0641\u064a \u0645\u0633\u0627\u062d\u0629 \u0627\u0644\u0639\u0645\u0644"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "member_email"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "$or": [
+        {
+          "member_email": "{{user.email}}"
+        },
+        {
+          "owner_email": "{{user.email}}"
+        },
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "super_admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "member_email": "{{user.email}}"
+        },
+        {
+          "owner_email": "{{user.email}}"
+        },
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "super_admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "member_email": "{{user.email}}"
+        },
+        {
+          "owner_email": "{{user.email}}"
+        },
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "super_admin"
+          }
+        }
+      ]
+    }
+  }
+}

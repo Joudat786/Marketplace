@@ -1,0 +1,42 @@
+{
+  "name": "AppCategory",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "\u0627\u0633\u0645 \u0627\u0644\u062a\u0635\u0646\u064a\u0641"
+    },
+    "description": {
+      "type": "string",
+      "description": "\u0648\u0635\u0641 \u0627\u0644\u062a\u0635\u0646\u064a\u0641"
+    },
+    "icon": {
+      "type": "string",
+      "description": "\u0623\u064a\u0642\u0648\u0646\u0629 \u0627\u0644\u062a\u0635\u0646\u064a\u0641 (emoji)"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "\u0647\u0644 \u0627\u0644\u062a\u0635\u0646\u064a\u0641 \u0645\u0641\u0639\u0651\u0644"
+    },
+    "sort_order": {
+      "type": "integer",
+      "default": 0,
+      "description": "\u062a\u0631\u062a\u064a\u0628 \u0627\u0644\u0639\u0631\u0636"
+    },
+    "target_audience": {
+      "type": "string",
+      "enum": [
+        "all",
+        "super_admin_only",
+        "clients_only",
+        "partners_only"
+      ],
+      "default": "all",
+      "description": "\u0645\u0646 \u064a\u0631\u0649 \u0647\u0630\u0627 \u0627\u0644\u062a\u0635\u0646\u064a\u0641: all=\u0627\u0644\u062c\u0645\u064a\u0639\u060c super_admin_only=\u0627\u0644\u0633\u0648\u0628\u0631 \u0623\u062f\u0645\u0646 \u0641\u0642\u0637\u060c clients_only=\u0627\u0644\u0639\u0645\u0644\u0627\u0621 \u0641\u0642\u0637\u060c partners_only=\u0627\u0644\u0634\u0631\u0643\u0627\u0621 \u0641\u0642\u0637"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}
